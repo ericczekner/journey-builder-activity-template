@@ -1,4 +1,4 @@
-{
+{   
     "workflowApiVersion": "1.1",
     "metaData": {
         "icon": "images/icon.png",
@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
+            "name": "Custom JB Activity Testing",
+          "description": "Testing a custom jb activity with nodeJS and Heroku",
           "step1Label": "Configure Activity"
         }
     },
@@ -17,7 +17,7 @@
         "execute": {
            "inArguments":[],
           "outArguments": [],
-          "url": "https://<your-domain-here>/journeybuilder/execute",
+          "url": "https://https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -28,22 +28,22 @@
     },
     "configurationArguments": {
       "save": {
-        "url": "https://<your-domain-here>/journeybuilder/save",
+        "url": "https://https://custom-jba-nodejs.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://<your-domain-here>/journeybuilder/publish",
+        "url": "https://https://custom-jba-nodejs.herokuapp.com/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://<your-domain-here>/journeybuilder/stop",
+        "url": "https://https://custom-jba-nodejs.herokuapp.com/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://<your-domain-here>/journeybuilder/validate",
+        "url": "https://https://custom-jba-nodejs.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
