@@ -75,9 +75,8 @@ exports.save = function (req, res) {
 exports.execute = function (req, res) {
 
     console.log('The Request: ' + typeof(req))
-   for(const [key, value] of Object.entries(req)){
-    console.log(`${key}: ${value}`)
-   }
+   console.dir(req.body)
+   console.log(req.body)
 
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
