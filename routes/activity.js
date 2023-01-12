@@ -78,7 +78,7 @@ exports.execute = function (req, res) {
 
     const jwtSecret = process.env.jwtSecret
 
-    JWT(req.body, jwtSecret, (err, res)=>{
+    JWT(req.data, jwtSecret, (err, res)=>{
         console.log('body ec:')
         console.dir(res)
     })
