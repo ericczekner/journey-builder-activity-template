@@ -47,6 +47,7 @@ define([
     }
 
     function initialize(data) {
+        console.log('initializing!!!!!!!**********')
         console.log(data);
         if (data) {
             payload = data;
@@ -87,11 +88,13 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+        var customData = $('#customData').val();
+
+        console.log(customData)
 
         payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens
+            "tokens": authTokens,
+            "customData": customData
         }];
         
         payload['metaData'].isConfigured = true;
