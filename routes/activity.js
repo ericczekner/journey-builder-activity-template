@@ -74,11 +74,11 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
     
- 
+    console.dir(res)
 
     const jwtSecret = process.env.jwtSecret
 
-    JWT(req, jwtSecret, (err, output)=>{
+    JWT(res, jwtSecret, (err, output)=>{
         console.log('body ec:')
         console.dir(output)
     })

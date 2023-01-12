@@ -23,7 +23,7 @@
                     "customData": "{{nodejs_cjba.customData}}"
                 }
             ],
-            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute?testParam=testParameter",
             "verb": "POST",
             "body": "something goes here",
             "header": "",
