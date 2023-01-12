@@ -77,17 +77,17 @@ exports.save = function (req, res) {
 exports.execute = function (req, res) {
 
     
-    http.get(webhookURL, (res)=>{
+    http.get(webhookURL, (res) => {
         let data = '';
-        resp.on('data', (chunk)=>{
+        resp.on('data', (chunk) => {
             data += chunk;
         });
-        resp.on('end', ()=>{
+        resp.on('end', () => {
             console.log(JSON.parse(data).explanation);
 
         });
-    }).on("error", (err)=>{
-        console.log("Error: " err.message);
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
     })
 
 
