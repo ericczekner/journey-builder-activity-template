@@ -82,7 +82,7 @@ exports.execute = function (req, res) {
             console.error(err);
             return res.status(401).end();
         }
-
+        console.log(util.inspect(decoded, {showHidden: false, depth: null, colors: true}))
         console.log('ec_decoded: ')
         console.dir(decoded)
 
@@ -93,9 +93,7 @@ exports.execute = function (req, res) {
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
 
-            console.log('EC_body: ' + req.body)
-            logData(req);
-            console.log(decodedArgs)
+            
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
