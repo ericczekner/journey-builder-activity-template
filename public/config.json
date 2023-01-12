@@ -1,4 +1,4 @@
-{   
+{
     "workflowApiVersion": "1.1",
     "metaData": {
         "icon": "images/icon.png",
@@ -9,16 +9,20 @@
     "lang": {
         "en-US": {
             "name": "Custom JB Activity Testing",
-          "description": "Testing a custom jb activity with nodeJS and Heroku",
-          "step1Label": "Configure Activity"
+            "description": "Testing a custom jb activity with nodeJS and Heroku",
+            "step1Label": "Configure Activity"
         }
     },
     "arguments": {
         "execute": {
-           "inArguments":[],
-          "outArguments": [],
-          "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
+            "inArguments": [{
+                "subscriberKey": "eric.czekner@slalom.com"
+            }],
+            "outArguments": [{
+                "subscriberKey": "eric.czekner@slalom.com"
+            }],
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
@@ -27,35 +31,36 @@
         }
     },
     "configurationArguments": {
-      "save": {
-        "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
-       },
-       "publish": {
-        "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
-       },
-      "stop": {
-        "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
-      },
-      "validate": {
-        "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
-      }
+        "save": {
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/save",
+            "verb": "POST",
+            "useJwt": true
+        },
+        "publish": {
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/publish",
+            "verb": "POST",
+            "useJwt": true
+        },
+        "stop": {
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/stop",
+            "verb": "POST",
+            "useJwt": true
+        },
+        "validate": {
+            "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/validate",
+            "verb": "POST",
+            "useJwt": true
+        }
     },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
-    ],
+    "wizardSteps": [{
+        "label": "Configure Activity",
+        "key": "step1"
+    }],
     "userInterfaces": {
         "configModal": {
             "height": 400,
             "width": 1000,
-          "fullscreen": false
+            "fullscreen": false
         }
     },
     "schema": {
