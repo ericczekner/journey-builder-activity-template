@@ -74,7 +74,8 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-    console.log('The Request: ' + req)
+    console.log('The Request: ' + JSON.stringify(req))
+    console.log('The Response: ' + JSON.stringify(res))
 
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
