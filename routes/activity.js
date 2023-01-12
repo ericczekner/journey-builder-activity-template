@@ -83,7 +83,10 @@ exports.execute = function (req, res) {
             return res.status(401).end();
         }
 
-        console.log('ec_decoded: ' + decoded)
+        console.log('ec_decoded: ')
+        console.dir(decoded)
+
+        console.log('<message> %j', decoded);
 
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
