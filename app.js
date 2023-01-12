@@ -9,8 +9,13 @@ var path        = require('path');
 var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
+const cors      = require('cors')
 
 var app = express();
+
+app.use(cors({
+  origin: ['https://jbinteractions.s7.marketingcloudapps.com', 'https://cjba.whatericdoes.art/', 'https://custom-jba-nodejs.herokuapp.com/']
+}))
 
 var jwtSecret = process.env.jwtSecret
 
