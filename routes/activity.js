@@ -76,11 +76,20 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-    headers = {
-        'content-type':'application/json'
-    }
-    const webTest = axios.get(webhookURL, {headers:headers})
-    console.log(webTest)
+    
+    http.get(webhookURL, (res)=>{
+        let data = '';
+        resp.on('data', (chunk)=>{
+            data += chunk;
+        });
+        resp.on('end', ()=>{
+            console.log(JSON.parse(data).explanation);
+
+        });
+    }).on("error", (err)=>{
+        console.log("Error: " err.message);
+    })
+
 
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
