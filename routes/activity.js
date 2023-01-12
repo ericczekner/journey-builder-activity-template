@@ -73,8 +73,15 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-    console.log('body ec:')
-    console.dir(req.body)
+    
+ 
+
+    const jwtSecret = process.env.jwtSecret
+
+    JWT(req.body, jwtSecret, (err, res)=>{
+        console.log('body ec:')
+        console.dir(res)
+    })
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
@@ -83,10 +90,6 @@ exports.execute = function (req, res) {
             console.error(err);
             return res.status(401).end();
         }
-
-        
-
-
 
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
             
