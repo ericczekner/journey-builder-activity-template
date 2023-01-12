@@ -77,7 +77,7 @@ exports.save = function (req, res) {
 exports.execute = function (req, res) {
 
     
-    http.get(webhookURL, (res) => {
+    http.get({ url : webhookURL, rejectUnhauthorized : false }, (res) => {
         let data = '';
         resp.on('data', (chunk) => {
             data += chunk;
