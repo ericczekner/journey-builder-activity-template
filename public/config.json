@@ -17,18 +17,15 @@
         "execute": {
              "inArguments": [
                 {
-                    "ContactKey": "{{Contact.Key}}"
+                    "subscriberKey": "{{nodejs_cjba.subscriberKey}}"
                 },
                 {
-                    "Source": "{{Contact.Attribute.Trigger_Test.source}}"
-                },
-                {
-                    "Whee": "1"
+                    "customData": "{{nodejs_cjba.customData}}"
                 }
             ],
             "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
-            "body": "",
+            "body": "something goes here",
             "header": "",
             "format": "json",
             "useJwt": true,
@@ -73,14 +70,14 @@
             "execute": {
                 "inArguments": [
                     {
-                        "ContactKey": {
-                            "dataType": "Text",
+                        "subscriberKey": {
+                            "dataType": "EmailAddress",
                             "direction": "in",
                             "access": "visible"
                         }
                     },
                     {
-                        "Source": {
+                        "customData": {
                             "dataType": "Text",
                             "direction": "in",
                             "access": "visible"
@@ -89,7 +86,7 @@
                 ],
                 "outArguments": [],
                 "verb": "POST",
-                "body": "",
+                "body": "Something else here",
                 "header": "",
                 "format": "json",
                 "useJwt": true,
