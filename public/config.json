@@ -66,8 +66,20 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [],
-                "outArguments": []
+                "inArguments": [{
+                    "subscriberKey": {
+                        "dataType": "Text",
+                        "direction": "in",
+                        "access": "visible"
+                    }
+                }],
+                "outArguments": [{
+                    "subscriberKey": {
+                        "dataType": "Text",
+                        "direction": "in",
+                        "access": "visible"
+                    }
+                }]
             }
         }
     }
