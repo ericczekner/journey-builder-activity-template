@@ -78,9 +78,9 @@ exports.execute = function (req, res) {
 
     const jwtSecret = process.env.jwtSecret
 
-    JWT(req, jwtSecret, (err, res)=>{
+    JWT(req, jwtSecret, (err, output)=>{
         console.log('body ec:')
-        console.dir(res)
+        console.dir(output)
     })
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
