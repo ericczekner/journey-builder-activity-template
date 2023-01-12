@@ -12,6 +12,8 @@ var activity    = require('./routes/activity');
 
 var app = express();
 
+var jwtSecret = process.env.jwtSecret
+
 // Configure Express
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
