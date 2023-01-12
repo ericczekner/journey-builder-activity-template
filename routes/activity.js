@@ -82,7 +82,7 @@ exports.execute = function (req, res) {
     //    console.log(body.explanation)
     //    console.log('Done the hook call')
     // })
-
+    console.log('I made it this far')
 
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
