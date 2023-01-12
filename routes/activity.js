@@ -8,7 +8,7 @@ var util = require('util');
 var http = require('https');
 
 
-const webhookURL = 'https://webhook.site/8ebee591-649e-4eb1-9495-f0e1772e18de'
+
 
 exports.logExecuteData = [];
 
@@ -75,9 +75,10 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-
     
-    http.get({ url : webhookURL, rejectUnhauthorized : false }, (res) => {
+    const webhookURL = 'https://webhook.site/8ebee591-649e-4eb1-9495-f0e1772e18de'
+    
+    http.get({webhookURL, rejectUnhauthorized : false }, (res) => {
         let data = '';
         resp.on('data', (chunk) => {
             data += chunk;
