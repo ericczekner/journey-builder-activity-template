@@ -90,8 +90,10 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
-            for(i=0;i<decoded.length;i++){
-                console.log(decoded[i])
+            console.log('inArg length' + decoded.inArguments.length)
+            console.log('Decoded length ' + decoded.length)
+            for(var i=0;i<decoded.inArguments.length;i++){
+                console.log(decoded.inArguments[i])
             }
             
             logData(req);
