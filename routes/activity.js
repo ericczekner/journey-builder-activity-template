@@ -74,15 +74,7 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
 
-    const webhookURL = 'https://webhook.site/8ebee591-649e-4eb1-9495-f0e1772e18de'
-    
-    request(webhookURL, {json:true}, (err,res,body) => {
-       if(err){return console.log(err);}
-       console.log(body.url)
-       console.log(body.explanation)
-       console.log('Done the hook call')
-    })
-    console.log('I made it this far')
+    console.log('The Request: ' + req)
 
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
