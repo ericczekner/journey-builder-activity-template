@@ -6,9 +6,7 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
-
-
-
+const request = require('request')
 
 exports.logExecuteData = [];
 
@@ -75,20 +73,14 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-    
+
     const webhookURL = 'https://webhook.site/8ebee591-649e-4eb1-9495-f0e1772e18de'
     
-    http.get({webhookURL, rejectUnhauthorized : false }, (res) => {
-        let data = '';
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
-        resp.on('end', () => {
-            console.log(JSON.parse(data).explanation);
-
-        });
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
+    request(webhookURL, {json:true}, (err,res,body) => {
+       if(err){return console.log(err);}
+       console.log(body.url)
+       console.log(body.explanation)
+       console.log('Done the hook call')
     })
 
 
