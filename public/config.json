@@ -15,12 +15,17 @@
     },
     "arguments": {
         "execute": {
-            "inArguments": [{
-                "subscriberKey": "eric.czekner@slalom.com"
-            }],
-            "outArguments": [{
-                "subscriberKey": "eric.czekner@slalom.com"
-            }],
+             "inArguments": [
+                {
+                    "ContactKey": "{{Contact.Key}}"
+                },
+                {
+                    "Source": "{{Contact.Attribute.Trigger_Test.source}}"
+                },
+                {
+                    "Whee": "1"
+                }
+            ],
             "url": "https://custom-jba-nodejs.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
@@ -66,20 +71,32 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [{
-                    "subscriberKey": {
-                        "dataType": "Text",
-                        "direction": "in",
-                        "access": "visible"
+                "inArguments": [
+                    {
+                        "ContactKey": {
+                            "dataType": "Text",
+                            "direction": "in",
+                            "access": "visible"
+                        }
+                    },
+                    {
+                        "Source": {
+                            "dataType": "Text",
+                            "direction": "in",
+                            "access": "visible"
+                        }
                     }
-                }],
-                "outArguments": [{
-                    "subscriberKey": {
-                        "dataType": "Text",
-                        "direction": "in",
-                        "access": "visible"
-                    }
-                }]
+                ],
+                "outArguments": [],
+                "verb": "POST",
+                "body": "",
+                "header": "",
+                "format": "json",
+                "useJwt": true,
+                "customerKey": "",
+                "timeout": 10000,
+                "retryCount": 1,
+                "retryDelay": 1000
             }
         }
     }

@@ -61,30 +61,14 @@ define([
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
+        console.log(inArguments);
+
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
                 
               
             });
         });
-
-         var hasOutArguments = Boolean(
-            payload['arguments'] &&
-            payload['arguments'].execute &&
-            payload['arguments'].execute.outArguments &&
-            payload['arguments'].execute.outArguments.length > 0
-        );
-
-        var outArguments = hasOutArguments ? payload['arguments'].execute.outArguments : {};
-
-
-        $.each(outArguments, function (index, outArgument) {
-            $.each(outArgument, function (key, val) {
-                
-              
-            });
-        });
-        
 
         connection.trigger('updateButton', {
             button: 'next',
