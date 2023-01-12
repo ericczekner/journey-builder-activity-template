@@ -9,8 +9,15 @@ var path        = require('path');
 var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
+const cors      = require('cors')
 
 var app = express();
+
+app.use(cors({
+  origin: ['https://jbinteractions.s7.marketingcloudapps.com', 'https://cjba.whatericdoes.art/', 'https://custom-jba-nodejs.herokuapp.com/']
+}))
+
+var jwtSecret = process.env.jwtSecret
 
 // Configure Express
 app.set('port', process.env.PORT || 3000);
@@ -40,5 +47,5 @@ app.post('/journeybuilder/execute/', activity.execute );
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
-
+  console.log(jwtSecret)
 });

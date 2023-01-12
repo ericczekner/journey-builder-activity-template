@@ -93,8 +93,7 @@ define([
         console.log(customData)
 
         payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
-            "customData": customData
+            "tokens": authTokens
         }];
         
         payload['metaData'].isConfigured = true;

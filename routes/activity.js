@@ -74,17 +74,14 @@ exports.save = function (req, res) {
  */
 exports.execute = function (req, res) {
     
-    console.dir(res)
 
     const jwtSecret = process.env.jwtSecret
 
-    JWT(res.body, jwtSecret, (err, output)=>{
-        console.log('body ec:')
-        console.dir(output)
-    })
-    
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+
+        console.log('body ec:')
+        console.dir(decoded)
 
         // verification error -> unauthorized request
         if (err) {
